@@ -1,0 +1,41 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+
+  "name": "Chromassist - Your Personal Assistant!",
+  "short_name":"Chromassist",
+  "description": "Now use your voice to control your browser.",
+  "version": "2.1.8",
+  "background" : {
+    "scripts" : ["js/jquery.min.js","js/nlp_compromise.min.js","js/on-off-switch.js","js/on-off-switch-onload.js","js/jquery-1.11.2.min.js","background.js"],
+    "persistent" : true
+  },
+   "browser_action": {
+    "default_icon": {
+    "128":"tap.png"
+  },
+    "default_title" : "Chromassist - Your Personal Assistant",
+    "default_popup" : "popup.html"
+  },
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "icons": { "16": "chromassist.png",
+           "48": "chromassist.png",
+          "128": "chromassist.png" },
+  "permissions": [
+    "activeTab",
+    "bookmarks",
+    "history",
+    "geolocation",
+    "topSites",
+    "tabs",
+    "<all_urls>",
+    "https://ajax.googleapis.com/",
+    "http://clients1.google.com/complete/search",
+    "http://suggestqueries.google.com/complete/search",
+    "storage"
+  ]
+}
